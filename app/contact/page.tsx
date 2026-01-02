@@ -3,7 +3,6 @@
 import { useState, FormEvent } from 'react'
 import { Send, Calendar, Mail, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
-import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -25,12 +24,14 @@ export default function ContactPage() {
     try {
       // EmailJS configuration
       // These values should be set in environment variables
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || ''
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?.trim() || ''
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?.trim() || ''
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY?.trim() || ''
 
-      if (!serviceId || !templateId || !publicKey) {
-        console.error('EmailJS configuration missing. Please set environment variables.')
+      // Check if EmailJS is configured
+      const isEmailJSConfigured = serviceId && templateId && publicKey
+
+      if (!isEmailJSConfigured) {
         // Fallback: Open mailto link as backup
         const subject = encodeURIComponent(`Contact Form: ${formData.service} Inquiry`)
         const body = encodeURIComponent(
@@ -55,27 +56,56 @@ export default function ContactPage() {
         return
       }
 
-      // Prepare email template parameters
-      const templateParams = {
-        to_email: 'hello@akvi.ai',
-        from_name: formData.name,
-        from_email: formData.email,
-        company: formData.company || 'Not provided',
-        phone: formData.phone || 'Not provided',
-        service: formData.service,
-        message: formData.message,
-        reply_to: formData.email,
-      }
+      try {
+        // Dynamically import EmailJS only when needed (client-side only)
+        const emailjs = (await import('@emailjs/browser')).default
 
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        serviceId,
-        templateId,
-        templateParams,
-        publicKey
-      )
+        // Prepare email template parameters
+        const templateParams = {
+          to_email: 'hello@akvi.ai',
+          from_name: formData.name,
+          from_email: formData.email,
+          company: formData.company || 'Not provided',
+          phone: formData.phone || 'Not provided',
+          service: formData.service,
+          message: formData.message,
+          reply_to: formData.email,
+        }
 
-      if (response.status === 200) {
+        // Send email using EmailJS
+        const response = await emailjs.send(
+          serviceId,
+          templateId,
+          templateParams,
+          publicKey
+        )
+
+        if (response.status === 200) {
+          setSubmitStatus('success')
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            message: '',
+            service: 'consulting',
+          })
+        } else {
+          setSubmitStatus('error')
+        }
+      } catch (emailError) {
+        console.error('EmailJS error:', emailError)
+        // Fallback to mailto on error
+        const subject = encodeURIComponent(`Contact Form: ${formData.service} Inquiry`)
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\n` +
+          `Email: ${formData.email}\n` +
+          `Company: ${formData.company || 'Not provided'}\n` +
+          `Phone: ${formData.phone || 'Not provided'}\n` +
+          `Service: ${formData.service}\n\n` +
+          `Message:\n${formData.message}`
+        )
+        window.location.href = `mailto:hello@akvi.ai?subject=${subject}&body=${body}`
         setSubmitStatus('success')
         setFormData({
           name: '',
@@ -85,8 +115,6 @@ export default function ContactPage() {
           message: '',
           service: 'consulting',
         })
-      } else {
-        setSubmitStatus('error')
       }
     } catch (error) {
       console.error('Email sending error:', error)
