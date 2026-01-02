@@ -1,0 +1,24 @@
+{
+  "name": "Akvi.ai - AI-Powered Software Consulting & Talent Staffing",
+  "short_name": "Akvi.ai",
+  "description": "Build Better Software Teams. Faster. Smarter.",
+  "icons": [
+    {
+      "src": "/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#118AB2",
+  "background_color": "#0B4F6C",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait-primary"
+}

@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "framer-motion": "^10.16.16",
     "clsx": "^2.0.0",
-    "lucide-react": "^0.294.0"
+    "lucide-react": "^0.294.0",
+    "@emailjs/browser": "^3.11.0"
   },
   "devDependencies": {
     "@types/node": "^20.10.5",

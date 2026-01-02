@@ -3,6 +3,7 @@
 import { useState, FormEvent } from 'react'
 import { Send, Calendar, Mail, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
+import emailjs from '@emailjs/browser'
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -22,15 +23,59 @@ export default function ContactPage() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      // EmailJS configuration
+      // These values should be set in environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || ''
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || ''
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ''
 
-      if (response.ok) {
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS configuration missing. Please set environment variables.')
+        // Fallback: Open mailto link as backup
+        const subject = encodeURIComponent(`Contact Form: ${formData.service} Inquiry`)
+        const body = encodeURIComponent(
+          `Name: ${formData.name}\n` +
+          `Email: ${formData.email}\n` +
+          `Company: ${formData.company || 'Not provided'}\n` +
+          `Phone: ${formData.phone || 'Not provided'}\n` +
+          `Service: ${formData.service}\n\n` +
+          `Message:\n${formData.message}`
+        )
+        window.location.href = `mailto:hello@akvi.ai?subject=${subject}&body=${body}`
+        setSubmitStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          message: '',
+          service: 'consulting',
+        })
+        setIsSubmitting(false)
+        return
+      }
+
+      // Prepare email template parameters
+      const templateParams = {
+        to_email: 'hello@akvi.ai',
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'Not provided',
+        phone: formData.phone || 'Not provided',
+        service: formData.service,
+        message: formData.message,
+        reply_to: formData.email,
+      }
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      )
+
+      if (response.status === 200) {
         setSubmitStatus('success')
         setFormData({
           name: '',
@@ -44,6 +89,7 @@ export default function ContactPage() {
         setSubmitStatus('error')
       }
     } catch (error) {
+      console.error('Email sending error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -237,17 +283,14 @@ export default function ContactPage() {
                   Schedule a free 30-minute consultation to discuss your needs and see how we can help.
                 </p>
                 <Link
-                  href="https://calendly.com/akvi-ai"
+                  href="https://akviai.zohobookings.in/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center space-x-2 px-6 py-3 bg-ocean-teal text-white rounded-lg font-semibold hover:bg-deep-blue transition-colors"
                 >
                   <Calendar className="w-5 h-5" />
-                  <span>Schedule on Calendly</span>
+                  <span>Book with Akvi.ai</span>
                 </Link>
-                <p className="text-sm text-neutral-dark/60 mt-4">
-                  * Replace with your actual Calendly link
-                </p>
               </div>
             </div>
           </div>
