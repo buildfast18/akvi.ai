@@ -13,6 +13,21 @@
     @apply bg-sand text-neutral-dark antialiased;
   }
 
+  /* Optimize text rendering for navigation */
+  nav {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  nav a {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

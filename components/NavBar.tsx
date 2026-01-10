@@ -40,18 +40,19 @@ export default function NavBar() {
       <motion.nav
         initial={false}
         animate={{
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(15, 23, 36, 0.1)',
-          backdropFilter: isScrolled ? 'blur(16px)' : 'blur(8px)',
+          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.98)' : 'rgba(15, 23, 36, 0.1)',
+          backdropFilter: isScrolled ? 'blur(8px)' : 'blur(8px)',
           boxShadow: isScrolled ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : '0 2px 4px -1px rgba(0, 0, 0, 0.1)',
         }}
         transition={{ duration: 0.3 }}
         className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
           isScrolled ? 'py-3' : 'py-6'
         }`}
+        style={{ isolation: 'isolate' }}
         role="navigation"
         aria-label="Main navigation"
       >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8" style={{ isolation: 'isolate' }}>
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-2 z-50 relative">
@@ -66,7 +67,7 @@ export default function NavBar() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center space-x-1" style={{ isolation: 'isolate', position: 'relative', zIndex: 60 }}>
               {navItems.map((item) => {
                 const Icon = item.icon
                 const isActive = pathname === item.href
@@ -76,50 +77,114 @@ export default function NavBar() {
                     href={item.href}
                     className={`relative px-4 py-2 rounded-lg transition-all duration-300 group overflow-hidden ${
                       isActive
-                        ? 'text-[rgb(255,92,57)] font-semibold'
+                        ? isScrolled
+                          ? 'text-[rgb(255,92,57)] font-bold'
+                          : 'text-white font-bold'
                         : isScrolled 
-                          ? 'text-neutral-dark font-semibold' 
+                          ? 'text-neutral-dark font-semibold group-hover:text-[rgb(255,92,57)]' 
                           : 'text-white font-semibold drop-shadow-lg'
                     }`}
+                    style={{ 
+                      isolation: 'isolate',
+                      position: 'relative',
+                      zIndex: isScrolled ? 70 : 50,
+                      textRendering: 'optimizeLegibility',
+                      WebkitFontSmoothing: 'antialiased',
+                      MozOsxFontSmoothing: 'grayscale'
+                    }}
                     aria-current={isActive ? 'page' : undefined}
                   >
-                    <span className="flex items-center space-x-1 relative">
+                    <span 
+                      className={`flex items-center space-x-1 relative ${isScrolled ? 'z-[60]' : 'z-50'}`}
+                      style={{ 
+                        isolation: 'isolate',
+                        transform: 'translateZ(0)',
+                        willChange: 'transform',
+                        backfaceVisibility: 'hidden',
+                        WebkitFontSmoothing: 'antialiased',
+                        MozOsxFontSmoothing: 'grayscale'
+                      }}
+                    >
                       {/* Text rolling effect */}
-                      <span className="relative inline-block overflow-hidden" style={{ height: '1.5rem' }}>
+                      <span 
+                        className={`relative inline-block overflow-hidden ${isScrolled ? 'z-[60]' : 'z-50'}`} 
+                        style={{ 
+                          height: '1.5rem',
+                          isolation: 'isolate',
+                          transform: 'translateZ(0)'
+                        }}
+                      >
                         <motion.span
-                          className="flex flex-col"
+                          className={`flex flex-col relative ${isScrolled ? 'z-[60]' : 'z-50'}`}
                           initial={{ y: 0 }}
                           whileHover={{ y: '-1.5rem' }}
                           transition={{ duration: 0.3, ease: 'easeInOut' }}
+                          style={{ isolation: 'isolate' }}
                         >
-                          <span className="block leading-6">{item.label}</span>
-                          <span className="block leading-6 text-[rgb(255,92,57)] font-bold">{item.label}</span>
+                          <span 
+                            className={`block leading-6 relative ${isScrolled ? 'z-[60] opacity-100' : 'z-50'}`}
+                            style={{ 
+                              transform: 'translateZ(0)',
+                              WebkitFontSmoothing: 'antialiased'
+                            }}
+                          >
+                            {item.label}
+                          </span>
+                          <span 
+                            className={`block leading-6 font-bold relative ${isScrolled ? 'z-[60] opacity-100' : 'z-50'} ${
+                              isScrolled 
+                                ? 'text-[rgb(255,92,57)]' 
+                                : 'text-white'
+                            }`}
+                            style={{ 
+                              transform: 'translateZ(0)',
+                              WebkitFontSmoothing: 'antialiased'
+                            }}
+                          >
+                            {item.label}
+                          </span>
                         </motion.span>
                       </span>
                       <Icon
-                        className={`w-4 h-4 transition-transform duration-300 ${
+                        className={`w-4 h-4 transition-transform duration-300 relative ${isScrolled ? 'z-[60] opacity-100' : 'z-50'} ${
                           isActive 
-                            ? 'text-[rgb(255,92,57)]' 
+                            ? isScrolled
+                              ? 'text-[rgb(255,92,57)]'
+                              : 'text-white'
                             : isScrolled 
-                              ? 'text-neutral-dark/80' 
+                              ? 'text-neutral-dark opacity-100 group-hover:text-[rgb(255,92,57)]' 
                               : 'text-white'
                         } group-hover:rotate-12 group-hover:text-[rgb(255,92,57)]`}
+                        style={{ 
+                          transform: 'translateZ(0)',
+                          isolation: 'isolate'
+                        }}
                         aria-hidden="true"
                       />
                     </span>
                     {isActive && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute inset-0 bg-[rgb(255,92,57)]/20 rounded-lg -z-10"
+                        className={`absolute inset-0 rounded-lg z-0 ${
+                          isScrolled
+                            ? 'bg-[rgb(255,92,57)]/20'
+                            : 'bg-[rgb(255,140,100)] shadow-lg'
+                        }`}
                         initial={false}
                         transition={{ type: 'spring', stiffness: 500, damping: 30 }}
                       />
                     )}
                     {/* Hover background */}
-                    <motion.div
-                      className="absolute inset-0 bg-[rgb(255,92,57)]/10 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      initial={false}
-                    />
+                    {!isActive && (
+                      <motion.div
+                        className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 ${
+                          isScrolled
+                            ? 'bg-[rgb(255,92,57)]/15'
+                            : 'bg-[rgb(255,92,57)]/10'
+                        }`}
+                        initial={false}
+                      />
+                    )}
                   </Link>
                 )
               })}
