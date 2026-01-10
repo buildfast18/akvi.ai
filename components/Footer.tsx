@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Mail, Phone, MapPin, Linkedin, Twitter, Github } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Twitter, Github, Instagram } from 'lucide-react'
 
 const footerLinks = {
   company: [
@@ -26,7 +26,8 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' }
+  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Instagram, href: 'https://www.instagram.com/akvi.ai/', label: '@akvi.ai' }
 ]
 
 export default function Footer() {
@@ -151,6 +152,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-white/10 hover:bg-ocean-teal flex items-center justify-center transition-colors"
                   aria-label={social.label}
                 >
