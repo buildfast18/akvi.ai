@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 const navItems = [
   { href: '/', label: 'Home', icon: ChevronRight },
   { href: '/services', label: 'Services', icon: ChevronRight },
-  { href: '/case-studies', label: 'Case Studies', icon: ChevronRight },
+  // { href: '/case-studies', label: 'Case Studies', icon: ChevronRight },
   { href: '/about', label: 'About', icon: ChevronRight },
-  { href: '/pricing', label: 'Pricing', icon: ChevronRight },
+  // { href: '/pricing', label: 'Pricing', icon: ChevronRight },
   { href: '/careers', label: 'Careers', icon: ChevronRight },
   { href: '/contact', label: 'Contact', icon: ChevronRight },
 ]

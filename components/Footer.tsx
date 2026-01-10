@@ -8,26 +8,25 @@ const footerLinks = {
   company: [
     { href: '/about', label: 'About Us' },
     { href: '/careers', label: 'Careers' },
-    { href: '/case-studies', label: 'Case Studies' },
+    // { href: '/case-studies', label: 'Case Studies' },
     { href: '/contact', label: 'Contact' },
   ],
   services: [
     { href: '/services', label: 'Services' },
-    { href: '/pricing', label: 'Pricing' },
+    // { href: '/pricing', label: 'Pricing' },
     { href: '/services#consulting', label: 'Software Consulting' },
     { href: '/services#staffing', label: 'Talent & Staffing' },
   ],
   resources: [
-    { href: '/blog', label: 'Blog' },
-    { href: '/case-studies', label: 'Success Stories' },
+    // { href: '/blog', label: 'Blog' },
+    // { href: '/case-studies', label: 'Success Stories' },
     { href: '/contact', label: 'Book Consultation' },
   ],
 }
 
 const socialLinks = [
   { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: Twitter, href: '#', label: 'Twitter' }
 ]
 
 export default function Footer() {
