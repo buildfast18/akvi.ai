@@ -61,11 +61,11 @@ export default function Footer() {
                 className="flex items-center space-x-2 text-white/70 hover:text-light-aqua transition-colors"
               >
                 <Phone className="w-5 h-5" aria-hidden="true" />
-                <span>+91 123 456 7890</span>
+                <span>+91-9951827530</span>
               </a>
               <div className="flex items-start space-x-2 text-white/70">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>India & Global</span>
+                <span>8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039</span>
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <div>
+            {/* <div>
               <h4 className="font-semibold mb-3">Newsletter</h4>
               <form className="flex flex-col space-y-2" onSubmit={(e) => e.preventDefault()}>
                 <input
@@ -135,7 +135,7 @@ export default function Footer() {
                   Subscribe
                 </button>
               </form>
-            </div>
+            </div> */}
           </div>
         </div>
 

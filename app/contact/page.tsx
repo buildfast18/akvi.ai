@@ -286,7 +286,7 @@ export default function ContactPage() {
                       href="tel:+911234567890"
                       className="text-ocean-teal hover:text-deep-blue transition-colors"
                     >
-                      +91 123 456 7890
+                      +91-9951827530
                     </a>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-neutral-dark mb-1">Location</h3>
-                    <p className="text-neutral-dark/70">India & Global</p>
+                    <p className="text-neutral-dark/70">8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039</p>
                   </div>
                 </div>
               </div>
