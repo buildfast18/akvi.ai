@@ -25,8 +25,8 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/akvi-ai', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://x.com/akvi_ai', label: 'X' },
   { icon: Instagram, href: 'https://www.instagram.com/akvi.ai/', label: '@akvi.ai' }
 ]
 
