@@ -62,6 +62,7 @@ export default function NavBar() {
                 width={isScrolled ? 120 : 140}
                 height={isScrolled ? 40 : 50}
                 className="transition-all duration-300"
+                style={{ height: 'auto' }}
                 priority
               />
             </Link>
@@ -225,7 +226,9 @@ export default function NavBar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-x-0 top-20 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-b border-light-aqua/30 shadow-lg"
+            className={`fixed inset-x-0 z-40 lg:hidden bg-white/95 backdrop-blur-lg border-b border-light-aqua/30 shadow-lg ${
+              isScrolled ? 'top-20' : 'top-28'
+            }`}
           >
             <div className="container mx-auto px-4 py-6">
               <nav className="flex flex-col space-y-2" role="navigation" aria-label="Mobile navigation">
