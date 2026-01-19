@@ -203,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* Case Studies */}
-      <section className="py-20 bg-white" aria-label="Case studies">
+      {/* <section className="py-20 bg-white" aria-label="Case studies">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-dark mb-4">
@@ -233,10 +233,10 @@ export default function Home() {
             </AnimatedButton>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
-      <TestimonialCarousel testimonials={testimonials} />
+      {/* <TestimonialCarousel testimonials={testimonials} /> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-deep-blue to-ocean-teal text-white" aria-label="Call to action">
