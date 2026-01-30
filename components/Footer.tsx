@@ -47,7 +47,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 mb-6 max-w-md">
-              For startups and SMEs that need reliable software talent and delivery support, Akvi.ai is an AI-enabled software consulting and staffing partner.
+              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. from leadership hiring to software development - with transparency, speed, and measurable outcomes.
             </p>
             <div className="space-y-3">
               <a
