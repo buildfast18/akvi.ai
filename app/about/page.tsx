@@ -41,7 +41,7 @@ export default function AboutPage() {
               About Akvi.ai
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              For startups and SMEs that need reliable software talent and delivery support, Akvi.ai is an AI-enabled software consulting and staffing partner that builds and scales engineering teams faster than traditional agencies — with better alignment, transparency, and outcomes.
+              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes - without enterprise-level costs or delays.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white" aria-label="Why choose us">
+      {/* <section className="py-20 bg-white" aria-label="Why choose us">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-dark mb-8 text-center">
@@ -143,7 +143,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-deep-blue to-ocean-teal text-white">

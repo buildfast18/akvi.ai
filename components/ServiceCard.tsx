@@ -1,14 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { ArrowRight, Code, Users, TrendingUp, type LucideIcon } from 'lucide-react'
+import { Code, Users, TrendingUp, Briefcase, UserPlus, GraduationCap, Settings, BookOpen, type LucideIcon } from 'lucide-react'
 
 // Icon mapping
 const iconMap: Record<string, LucideIcon> = {
   Code,
   Users,
   TrendingUp,
+  Briefcase,
+  UserPlus,
+  GraduationCap,
+  Settings,
+  BookOpen,
 }
 
 interface ServiceCardProps {
@@ -16,7 +20,6 @@ interface ServiceCardProps {
   description: string
   icon: string
   features: string[]
-  href?: string
   delay?: number
 }
 
@@ -25,7 +28,6 @@ export default function ServiceCard({
   description,
   icon: iconName,
   features,
-  href = '/services',
   delay = 0,
 }: ServiceCardProps) {
   const Icon = iconMap[iconName] || Code
@@ -59,13 +61,6 @@ export default function ServiceCard({
         ))}
       </ul>
 
-      <Link
-        href={href}
-        className="group inline-flex items-center space-x-2 text-ocean-teal font-semibold hover:text-deep-blue transition-colors"
-      >
-        <span>Learn more</span>
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </Link>
     </motion.div>
   )
 }

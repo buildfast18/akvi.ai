@@ -5,7 +5,7 @@ import TestimonialCarousel from '@/components/TestimonialCarousel'
 import CaseStudyCard from '@/components/CaseStudyCard'
 import AnimatedButton from '@/components/AnimatedButton'
 import Link from 'next/link'
-import { Code, Users, TrendingUp, Zap, Target, Heart, Globe } from 'lucide-react'
+import { Zap, Target, Heart, Globe, ShieldCheck } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -15,16 +15,15 @@ export const metadata: Metadata = {
 
 const services = [
   {
-    title: 'Software Consulting',
-    description: 'From idea to execution: product engineering, architecture, cloud & AI solutions, and interim technical leadership.',
+    title: 'Software Development',
+    description: 'End-to-end software development services from concept to deployment. We build scalable, high-quality software solutions tailored to your business needs.',
     icon: 'Code',
     features: [
-      'Product engineering & architecture',
-      'Cloud & AI solutions',
-      'Interim technical leadership',
-      'Technical due diligence',
+      'Custom software development',
+      'Web & mobile application development',
+      'Cloud-native solutions & architecture',
+      'Quality assurance & testing',
     ],
-    href: '/services#consulting',
   },
   {
     title: 'AI-Powered Talent & Staffing',
@@ -32,23 +31,67 @@ const services = [
     icon: 'Users',
     features: [
       'Full-time & contract engineers',
-      'Dedicated remote teams',
-      'AI + human vetting',
-      'Skill-verified candidates',
+      'Dedicated remote development teams',
+      'AI-driven candidate matching',
+      'Expert human vetting & interviews',
+      'Skill assessments & verification',
+      'Fast onboarding & integration',
     ],
-    href: '/services#staffing',
   },
   {
-    title: 'Delivery & Scaling',
-    description: 'Project delivery support, build/scale teams, and technical operations to drive outcomes.',
-    icon: 'TrendingUp',
+    title: 'Leadership Hiring',
+    description: 'Finding leaders who build the future. We partner with founders, boards, and senior leadership teams to identify, assess, and secure transformative leaders who deliver impact from day one.',
+    icon: 'Briefcase',
     features: [
-      'Project delivery support',
-      'Team building & scaling',
-      'Technical operations',
-      'Outcome-driven approach',
+      'CEOs, COOs, CTOs, CIOs & CXO-level leadership',
+      'Technology & Digital Leaders placement',
+      'Product, Engineering & Data Heads',
+      'Finance, HR, and Operations Leadership',
     ],
-    href: '/services#delivery',
+  },
+  // {
+  //   title: 'RPO (Recruitment Process Outsourcing)',
+  //   description: 'Scalable hiring with predictable outcomes. We act as an extension of your talent acquisition function, managing your recruitment lifecycle while improving quality and reducing time-to-hire.',
+  //   icon: 'UserPlus',
+  //   features: [
+  //     'Workforce planning & hiring strategy',
+  //     'Talent sourcing & market mapping',
+  //     'Screening, assessment & interview coordination',
+  //     'Recruitment analytics & reporting',
+  //   ],
+  // },
+  {
+    title: 'HTD (Hire-Train-Deploy)',
+    description: 'Job-ready talent with faster deployment and reduced hiring risk. We build reliable talent pipelines by hiring high-potential candidates, training them on required skills, and deploying them as job-ready professionals.',
+    icon: 'GraduationCap',
+    features: [
+      'Entry-level and early-career hiring',
+      'Technology & digital skills training',
+      'Role-based curriculum design',
+      'Deployment & performance tracking',
+    ],
+  },
+  // {
+  //   title: 'MSP (Managed Service Provider)',
+  //   description: 'Smarter management of your contingent workforce. We bring structure, visibility, and control to your non-permanent workforce while improving quality, reducing costs, and ensuring compliance.',
+  //   icon: 'Settings',
+  //   features: [
+  //     'Contingent workforce strategy & planning',
+  //     'Vendor management & consolidation',
+  //     'Contract, compliance & risk management',
+  //     'Workforce analytics & reporting',
+  //   ],
+  // },
+  {
+    title: 'Learning & Development',
+    description: 'Building skills for today, preparing talent for tomorrow. We design and deliver practical, role-based learning programs aligned to real business needs—not just theoretical training.',
+    icon: 'BookOpen',
+    features: [
+      'Technology & Digital Skills training',
+      'Leadership & Manager Development',
+      'Functional & Role-Based Training',
+      'Continuous Upskilling & Reskilling',
+    ],
   },
 ]
 
@@ -57,6 +100,7 @@ const benefits = [
   { icon: Target, text: 'Quality-First Talent — Every engineer is skill-assessed and vetted by experts.' },
   { icon: Heart, text: 'Startup-Friendly — Flexible engagements, transparent pricing, outcome-focused.' },
   { icon: Globe, text: 'Global Reach — Access top talent from India and worldwide, timezone-aligned.' },
+  { icon: ShieldCheck, text: 'Governance & Compliance — Robust policy adherence and ethical practices ensure trust, transparency, and risk mitigation.' },
 ]
 
 const caseStudies = [
@@ -123,10 +167,10 @@ export default function Home() {
               Why Akvi.ai?
             </h2>
             <p className="text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-              AI-Powered Talent. Real-World Results.
+              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes- without enterprise-level costs.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon
               return (
@@ -151,7 +195,7 @@ export default function Home() {
               Our Services
             </h2>
             <p className="text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-              Comprehensive solutions to build and scale your software teams
+              Comprehensive talent and technology solutions to build and scale your organization
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -162,7 +206,6 @@ export default function Home() {
                 description={service.description}
                 icon={service.icon}
                 features={service.features}
-                href={service.href}
                 delay={index * 0.1}
               />
             ))}
