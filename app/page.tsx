@@ -9,8 +9,41 @@ import { Zap, Target, Heart, Globe, ShieldCheck } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Home - Akvi.ai | AI-Powered Software Consulting & Talent Staffing',
-  description: 'Build Better Software Teams. Faster. Smarter. Akvi.ai helps enterprises hire top software talent and deliver projects using AI-driven staffing and expert consulting.',
+  title: 'Home - AI-Powered Software Consulting & Talent Staffing',
+  description: 'Build Better Software Teams. Faster. Smarter. Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions.',
+  keywords: [
+    'AI-powered staffing',
+    'software consulting',
+    'talent acquisition',
+    'startup hiring',
+    'SME software teams',
+    'leadership hiring',
+    'remote teams',
+    'technical recruitment',
+  ],
+  openGraph: {
+    title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
+    description: 'Build Better Software Teams. Faster. Smarter. AI-powered talent intelligence with expert consulting for startups and SMEs.',
+    url: 'https://www.akvi.ai',
+    type: 'website',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
+    description: 'Build Better Software Teams. Faster. Smarter.',
+    images: ['/Akvi_logo_3.png'],
+  },
+  alternates: {
+    canonical: 'https://www.akvi.ai',
+  },
 }
 
 const services = [
@@ -155,8 +188,30 @@ const testimonials = [
 ]
 
 export default function Home() {
+  const websiteStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Akvi.ai',
+    url: 'https://www.akvi.ai',
+    description: 'AI-powered software consulting and talent staffing solutions for startups and SMEs',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.akvi.ai/search?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteStructuredData),
+        }}
+      />
       <Hero />
 
       {/* Why Akvi.ai Section */}

@@ -12,10 +12,40 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
-  description: 'Akvi.ai helps startups and SMEs build high-performing software teams faster using AI-driven talent matching and hands-on consulting.',
-  keywords: 'software consulting, AI staffing, talent acquisition, startup hiring, SME software teams, India tech talent',
-  authors: [{ name: 'Akvi.ai' }],
+  metadataBase: new URL('https://www.akvi.ai'),
+  title: {
+    default: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing Solutions',
+    template: '%s | Akvi.ai',
+  },
+  description: 'Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and RPO to software development and learning solutions, we deliver end-to-end talent and technology services.',
+  keywords: [
+    'software consulting',
+    'AI staffing',
+    'talent acquisition',
+    'startup hiring',
+    'SME software teams',
+    'India tech talent',
+    'leadership hiring',
+    'RPO recruitment',
+    'Hire Train Deploy',
+    'MSP managed services',
+    'software development',
+    'IT consulting',
+    'remote teams',
+    'technical recruitment',
+    'AI-powered hiring',
+    'talent staffing',
+    'software engineering teams',
+    'tech talent sourcing',
+  ],
+  authors: [{ name: 'Akvi.ai', url: 'https://www.akvi.ai' }],
+  creator: 'Akvi.ai',
+  publisher: 'Akvi.ai',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: [
       { url: '/favicon.ico' },
@@ -31,20 +61,43 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   openGraph: {
-    title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
-    description: 'Build Better Software Teams. Faster. Smarter.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://www.akvi.ai',
+    siteName: 'Akvi.ai',
+    title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing Solutions',
+    description: 'Build Better Software Teams. Faster. Smarter. AI-powered talent intelligence with expert consulting for startups and SMEs.',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Akvi.ai - AI-Powered Software Consulting & Talent Staffing',
-    description: 'Build Better Software Teams. Faster. Smarter.',
+    description: 'Build Better Software Teams. Faster. Smarter. AI-powered talent intelligence with expert consulting.',
+    creator: '@akvi_ai',
+    images: ['/Akvi_logo_3.png'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  alternates: {
+    canonical: 'https://www.akvi.ai',
+  },
+  category: 'technology',
 }
 
 export default function RootLayout({
@@ -55,10 +108,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="canonical" href="https://www.akvi.ai" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -66,10 +122,45 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'Akvi.ai',
-              description: 'AI-enabled software consulting and staffing partner',
-              url: 'https://akvi.ai',
-              logo: 'https://akvi.ai/logo.png',
-              sameAs: [],
+              description: 'AI-enabled software consulting and staffing partner helping enterprises build high-performing software teams',
+              url: 'https://www.akvi.ai',
+              logo: 'https://www.akvi.ai/Akvi_logo_3.png',
+              foundingDate: '2025',
+              address: {
+                '@type': 'PostalAddress',
+                streetAddress: '8-41/22/2/1, West Balaji Hills',
+                addressLocality: 'Hyderabad',
+                addressRegion: 'Telangana',
+                postalCode: '500039',
+                addressCountry: 'IN',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                telephone: '+91-9951827530',
+                contactType: 'Customer Service',
+                email: 'hello@akvi.ai',
+                areaServed: 'IN',
+                availableLanguage: ['en', 'hi'],
+              },
+              sameAs: [
+                'https://www.linkedin.com/in/akvi-ai',
+                'https://x.com/akvi_ai',
+                'https://www.instagram.com/akvi.ai/',
+              ],
+              areaServed: {
+                '@type': 'Country',
+                name: 'India',
+              },
+              serviceType: [
+                'Software Consulting',
+                'AI-Powered Talent Staffing',
+                'Leadership Hiring',
+                'Recruitment Process Outsourcing',
+                'Hire Train Deploy',
+                'Managed Service Provider',
+                'Learning & Development',
+                'Software Development',
+              ],
             }),
           }}
         />
