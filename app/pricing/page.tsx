@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pricing - Akvi.ai | Transparent Pricing Plans',
     description: 'Flexible pricing plans for software consulting and AI-powered talent staffing.',
-    images: ['/og-image.jpg'],
+    images: ['/Akvi_logo_3.png'],
   },
   alternates: {
     canonical: 'https://www.akvi.ai/pricing',

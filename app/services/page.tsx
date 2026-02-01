@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Services - Akvi.ai | Leadership Hiring, RPO, HTD, MSP & Software Development',
     description: 'Comprehensive talent and technology solutions for startups and SMEs.',
-    images: ['/og-image.jpg'],
+    images: ['/Akvi_logo_3.png'],
   },
   alternates: {
     canonical: 'https://www.akvi.ai/services',

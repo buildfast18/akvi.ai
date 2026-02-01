@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Us - Akvi.ai | Get in Touch',
     description: 'Contact Akvi.ai for software consulting and AI-powered talent staffing solutions.',
-    images: ['/og-image.jpg'],
+    images: ['/Akvi_logo_3.png'],
   },
   alternates: {
     canonical: 'https://www.akvi.ai/contact',

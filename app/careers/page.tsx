@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Careers - Akvi.ai | Join Our Team',
     description: 'Join Akvi.ai and help startups and SMEs build better software teams.',
-    images: ['/og-image.jpg'],
+    images: ['/Akvi_logo_3.png'],
   },
   alternates: {
     canonical: 'https://www.akvi.ai/careers',

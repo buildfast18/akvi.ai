@@ -9,7 +9,7 @@ describe('Hero', () => {
 
   it('renders the subheadline', () => {
     render(<Hero />)
-    expect(screen.getByText(/Akvi.ai helps startups and SMEs/i)).toBeInTheDocument()
+    expect(screen.getByText(/Akvi.ai helps SMEs/i)).toBeInTheDocument()
   })
 
   it('renders primary CTA', () => {

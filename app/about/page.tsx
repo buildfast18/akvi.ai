@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'About Us - Akvi.ai | Our Mission & Values',
     description: 'Learn about Akvi.ai - an AI-enabled software consulting and staffing partner.',
-    images: ['/og-image.jpg'],
+    images: ['/Akvi_logo_3.png'],
   },
   alternates: {
     canonical: 'https://www.akvi.ai/about',
