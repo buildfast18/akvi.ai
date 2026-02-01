@@ -53,11 +53,11 @@ const openPositions = [
     description: 'Help us find and vet top software talent using our AI-powered platform combined with expert human judgment.',
   },
   {
-    title: 'Software Consultant',
-    department: 'Consulting',
+    title: 'BDM (Business Development Manager)',
+    department: 'Sales & Business Development',
     location: 'Remote (India/Global)',
-    type: 'Contract/Full-time',
-    description: 'Provide technical consulting and leadership to startups and SMEs, helping them build and scale their teams.',
+    type: 'Full-time',
+    description: 'Drive business growth by identifying and developing new client relationships. Promote our comprehensive talent and technology solutions.',
   },
 ]
 
@@ -72,14 +72,14 @@ export default function CareersPage() {
               Join the Akvi.ai Team
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Help us build better software teams for startups and SMEs. Work on cutting-edge AI technology and make a real impact.
+              Help us build better software teams for enterprises. Work on cutting-edge AI technology and make a real impact.
             </p>
           </div>
         </div>
       </section>
 
       {/* Why Work Here */}
-      <section className="py-20 bg-white" aria-label="Why work at Akvi.ai">
+      {/* <section className="py-20 bg-white" aria-label="Why work at Akvi.ai">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-dark mb-4">
@@ -107,7 +107,7 @@ export default function CareersPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Open Positions */}
       <section className="py-20 bg-sand" aria-label="Open positions">

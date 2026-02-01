@@ -12,9 +12,8 @@ const footerLinks = {
     { href: '/contact', label: 'Contact' },
   ],
   services: [
-    { href: '/services', label: 'Services' },
     // { href: '/pricing', label: 'Pricing' },
-    { href: '/services#consulting', label: 'Software Consulting' },
+    { href: '/services#development', label: 'Software Development' },
     { href: '/services#staffing', label: 'Talent & Staffing' },
   ],
   resources: [
@@ -47,7 +46,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-white/70 mb-6 max-w-md">
-              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. from leadership hiring to software development - with transparency, speed, and measurable outcomes.
+            Akvi.ai combines AI-powered talent intelligence with expert consulting to help organizations build high-performing teams faster - from leadership hiring to end-to-end software development - with transparency, speed, and measurable outcomes.
             </p>
             <div className="space-y-3">
               <a
@@ -143,7 +142,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} Akvi.ai. All rights reserved.
+            © {new Date().getFullYear()} Akvi.ai All rights reserved.
           </p>
           <div className="flex space-x-4">
             {socialLinks.map((social) => {
