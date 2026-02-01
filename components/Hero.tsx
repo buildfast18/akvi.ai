@@ -127,7 +127,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-12 text-white font-medium text-sm sm:text-base drop-shadow-md"
           >
-            Trusted by startups and growing SMEs across India and the globe.
+            Trusted by enterprises and growing SMEs across India and the globe.
           </motion.p>
         </motion.div>
       </div>

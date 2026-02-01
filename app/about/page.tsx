@@ -3,8 +3,39 @@ import { ArrowRight, Target, Users, Globe, Zap } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Us - Akvi.ai | Our Mission & Values',
-  description: 'Learn about Akvi.ai - an AI-enabled software consulting and staffing partner for startups and SMEs.',
+  title: 'About Us - Our Mission & Values',
+  description: 'Learn about Akvi.ai - an AI-enabled software consulting and staffing partner for startups and SMEs. Discover our mission, values, and commitment to building high-performing software teams with transparency, speed, and measurable outcomes.',
+  keywords: [
+    'about Akvi.ai',
+    'software consulting company',
+    'talent staffing company',
+    'AI-powered recruitment',
+    'startup hiring partner',
+    'SME technology solutions',
+  ],
+  openGraph: {
+    title: 'About Us - Akvi.ai | Our Mission & Values',
+    description: 'Learn about Akvi.ai - an AI-enabled software consulting and staffing partner for startups and SMEs.',
+    url: 'https://www.akvi.ai/about',
+    type: 'website',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'About Akvi.ai - Our Mission & Values',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us - Akvi.ai | Our Mission & Values',
+    description: 'Learn about Akvi.ai - an AI-enabled software consulting and staffing partner.',
+    images: ['/Akvi_logo_3.png'],
+  },
+  alternates: {
+    canonical: 'https://www.akvi.ai/about',
+  },
 }
 
 const values = [

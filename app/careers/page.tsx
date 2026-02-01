@@ -3,8 +3,41 @@ import { ArrowRight, Users, Heart, Zap, Globe } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Careers - Akvi.ai | Join Our Team',
-  description: 'Join Akvi.ai and help startups and SMEs build better software teams. Open positions and career opportunities.',
+  title: 'Careers - Join Our Team',
+  description: 'Join Akvi.ai and help enterprises build better software teams. Explore open positions including Senior Software Engineer, AI/ML Engineer, Technical Recruiter, and Business Development Manager. Remote-first culture with flexible hours.',
+  keywords: [
+    'careers at Akvi.ai',
+    'software engineer jobs',
+    'AI ML engineer jobs',
+    'technical recruiter jobs',
+    'BDM jobs',
+    'remote jobs India',
+    'tech jobs Hyderabad',
+    'startup jobs',
+  ],
+  openGraph: {
+    title: 'Careers - Akvi.ai | Join Our Team',
+    description: 'Join Akvi.ai and help startups and SMEs build better software teams. Explore open positions and career opportunities.',
+    url: 'https://www.akvi.ai/careers',
+    type: 'website',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Careers at Akvi.ai - Join Our Team',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Careers - Akvi.ai | Join Our Team',
+    description: 'Join Akvi.ai and help startups and SMEs build better software teams.',
+    images: ['/Akvi_logo_3.png'],
+  },
+  alternates: {
+    canonical: 'https://www.akvi.ai/careers',
+  },
 }
 
 const benefits = [

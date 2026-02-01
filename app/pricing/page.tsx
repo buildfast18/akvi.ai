@@ -3,8 +3,39 @@ import { Check, ArrowRight } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Pricing - Akvi.ai | Transparent Pricing Plans',
-  description: 'Flexible pricing plans for software consulting and AI-powered talent staffing. Startup-friendly pricing with transparent costs.',
+  title: 'Pricing - Transparent Pricing Plans',
+  description: 'Flexible pricing plans for software consulting and AI-powered talent staffing. Startup-friendly pricing with transparent costs. Custom solutions tailored to your business needs and budget.',
+  keywords: [
+    'software consulting pricing',
+    'talent staffing pricing',
+    'startup hiring costs',
+    'IT consulting rates',
+    'recruitment pricing',
+    'affordable tech staffing',
+  ],
+  openGraph: {
+    title: 'Pricing - Akvi.ai | Transparent Pricing Plans',
+    description: 'Flexible pricing plans for software consulting and AI-powered talent staffing. Startup-friendly pricing with transparent costs.',
+    url: 'https://www.akvi.ai/pricing',
+    type: 'website',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Akvi.ai Pricing - Transparent Pricing Plans',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Pricing - Akvi.ai | Transparent Pricing Plans',
+    description: 'Flexible pricing plans for software consulting and AI-powered talent staffing.',
+    images: ['/Akvi_logo_3.png'],
+  },
+  alternates: {
+    canonical: 'https://www.akvi.ai/pricing',
+  },
 }
 
 const plans = [

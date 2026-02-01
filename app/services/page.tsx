@@ -4,8 +4,45 @@ import { ArrowRight } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Services - Akvi.ai | Leadership Hiring, RPO, HTD, MSP & Software Development',
-  description: 'Comprehensive talent and technology solutions including leadership hiring, RPO, HTD, MSP, learning & development, and software development services.',
+  title: 'Services - Leadership Hiring, RPO, HTD, MSP & Software Development',
+  description: 'Comprehensive talent and technology solutions including leadership hiring, RPO (Recruitment Process Outsourcing), HTD (Hire-Train-Deploy), MSP (Managed Service Provider), learning & development, and software development services for startups and SMEs.',
+  keywords: [
+    'leadership hiring',
+    'executive search',
+    'RPO services',
+    'recruitment process outsourcing',
+    'Hire Train Deploy',
+    'HTD services',
+    'MSP managed services',
+    'contingent workforce management',
+    'learning and development',
+    'software development services',
+    'talent solutions',
+    'IT staffing',
+  ],
+  openGraph: {
+    title: 'Services - Akvi.ai | Leadership Hiring, RPO, HTD, MSP & Software Development',
+    description: 'Comprehensive talent and technology solutions for startups and SMEs. Leadership hiring, RPO, HTD, MSP, learning & development, and software development.',
+    url: 'https://www.akvi.ai/services',
+    type: 'website',
+    images: [
+      {
+        url: '/Akvi_logo_3.png',
+        width: 1200,
+        height: 630,
+        alt: 'Akvi.ai Services - Leadership Hiring, RPO, HTD, MSP & Software Development',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Services - Akvi.ai | Leadership Hiring, RPO, HTD, MSP & Software Development',
+    description: 'Comprehensive talent and technology solutions for startups and SMEs.',
+    images: ['/Akvi_logo_3.png'],
+  },
+  alternates: {
+    canonical: 'https://www.akvi.ai/services',
+  },
 }
 
 const services = [
@@ -126,8 +163,75 @@ const processSteps = [
 ]
 
 export default function ServicesPage() {
+  const servicesStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Software Consulting and Talent Staffing',
+    provider: {
+      '@type': 'Organization',
+      name: 'Akvi.ai',
+      url: 'https://www.akvi.ai',
+    },
+    areaServed: {
+      '@type': 'Country',
+      name: 'India',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Talent and Technology Solutions',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Leadership Hiring',
+            description: 'Finding leaders who build the future. We partner with founders, boards, and senior leadership teams to identify, assess, and secure transformative leaders.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI-Powered Talent & Staffing',
+            description: 'Full-time & contract engineers, dedicated remote teams, skill-verified and interview-ready talent sourced with AI + human vetting.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'HTD (Hire-Train-Deploy)',
+            description: 'Job-ready talent with faster deployment and reduced hiring risk. We build reliable talent pipelines by hiring high-potential candidates.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Learning & Development',
+            description: 'Building skills for today, preparing talent for tomorrow. We design and deliver practical, role-based learning programs.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Software Development',
+            description: 'End-to-end software development services from concept to deployment. We build scalable, high-quality software solutions.',
+          },
+        },
+      ],
+    },
+  }
+
   return (
     <div className="pt-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(servicesStructuredData),
+        }}
+      />
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-ocean-teal to-light-aqua text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
