@@ -116,7 +116,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl text-white font-medium mb-10 max-w-3xl mx-auto text-balance drop-shadow-lg"
           >
-            Akvi.ai helps startups and SMEs hire top software talent and deliver projects using AI-driven staffing and expert consulting.
+            Akvi.ai helps enterprises hire top software talent and deliver projects using AI-driven staffing and expert consulting.
           </motion.p>
 
           <HeroButtons />

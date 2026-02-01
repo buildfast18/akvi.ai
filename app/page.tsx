@@ -10,7 +10,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Home - Akvi.ai | AI-Powered Software Consulting & Talent Staffing',
-  description: 'Build Better Software Teams. Faster. Smarter. Akvi.ai helps startups and SMEs hire top software talent and deliver projects using AI-driven staffing and expert consulting.',
+  description: 'Build Better Software Teams. Faster. Smarter. Akvi.ai helps enterprises hire top software talent and deliver projects using AI-driven staffing and expert consulting.',
 }
 
 const services = [
@@ -167,7 +167,7 @@ export default function Home() {
               Why Akvi.ai?
             </h2>
             <p className="text-lg text-neutral-dark/70 max-w-2xl mx-auto">
-              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes- without enterprise-level costs.
+              Akvi.ai combines AI-powered talent intelligence with expert consulting to help enterprises build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes - without enterprise-level costs.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">

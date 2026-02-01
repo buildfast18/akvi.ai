@@ -41,7 +41,7 @@ export default function AboutPage() {
               About Akvi.ai
             </h1>
             <p className="text-xl text-white/90 leading-relaxed">
-              Akvi.ai combines AI-powered talent intelligence with expert consulting to help startups and SMEs build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes - without enterprise-level costs or delays.
+              Akvi.ai combines AI-powered talent intelligence with expert consulting to help enterprises build high-performing teams faster. From leadership hiring and AI-powered talent & staffing to software development and learning solutions, we deliver end-to-end talent and technology services with transparency, speed, and measurable outcomes - without enterprise-level costs or delays.
             </p>
           </div>
         </div>
@@ -56,13 +56,13 @@ export default function AboutPage() {
             </h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-neutral-dark/70 leading-relaxed mb-6">
-                Akvi.ai helps startups and SMEs build high-performing software teams faster using AI-driven talent matching and hands-on consulting.
+                Akvi.ai empowers enterprises and SMEs to build and scale high-performing software teams through AI-driven talent matching and hands-on technology consulting.
               </p>
               <p className="text-lg text-neutral-dark/70 leading-relaxed mb-6">
-                We combine AI-powered talent intelligence with real-world software consulting to help startups and SMEs hire, scale, and deliver faster — without enterprise-level costs or delays.
+                We combine intelligent talent insights with real-world engineering expertise to help growing businesses hire smarter, scale faster, and deliver high-impact digital products — without enterprise-level costs or long hiring cycles.
               </p>
               <p className="text-lg text-neutral-dark/70 leading-relaxed">
-                Our target audience includes early-stage startups, growing SMEs, product companies, and tech-driven businesses in India and globally.
+              We work with early-stage startups, scaling SMEs, product companies, and tech-driven organizations across India and global markets.
               </p>
             </div>
           </div>
