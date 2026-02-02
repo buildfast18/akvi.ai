@@ -48,9 +48,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon.svg', type: 'image/svg+xml' },
+      // Primary: 96x96 PNG for Google Search (must be multiple of 48px)
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
@@ -110,10 +111,12 @@ export default function RootLayout({
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        {/* Primary favicon for Google Search: 96x96 PNG (Google requires multiple of 48px, recommends 48/96/192) */}
+        <link rel="icon" type="image/png" sizes="96x96" href="https://www.akvi.ai/favicon-96x96.png" />
+        <link rel="icon" href="https://www.akvi.ai/favicon.ico" sizes="any" />
+        <link rel="icon" href="https://www.akvi.ai/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="https://www.akvi.ai/apple-touch-icon.png" />
+        <link rel="manifest" href="https://www.akvi.ai/site.webmanifest" />
         <link rel="canonical" href="https://www.akvi.ai" />
         <script
           type="application/ld+json"
