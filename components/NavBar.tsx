@@ -3,9 +3,11 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ChevronRight } from 'lucide-react'
+import { Menu, X, ChevronRight, Orbit } from 'lucide-react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
+
+const ATS_AGENT_URL = 'https://agent-ats.akvi.ai/'
 
 const navItems = [
   { href: '/', label: 'Home', icon: ChevronRight },
@@ -14,7 +16,6 @@ const navItems = [
   { href: '/about', label: 'About', icon: ChevronRight },
   // { href: '/pricing', label: 'Pricing', icon: ChevronRight },
   { href: '/careers', label: 'Careers', icon: ChevronRight },
-  { href: '/contact', label: 'Contact', icon: ChevronRight },
 ]
 
 export default function NavBar() {
@@ -189,12 +190,28 @@ export default function NavBar() {
                   </Link>
                 )
               })}
-              <Link
-                href="/contact"
-                className="ml-4 px-6 py-2 bg-[rgb(255,92,57)] text-white rounded-lg font-bold hover:bg-[rgb(255,92,57)]/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Talk to an Expert
-              </Link>
+              <div className="ml-6 flex items-center gap-5 pl-1">
+                <a
+                  href={ATS_AGENT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-1.5 px-5 py-2 rounded-lg font-bold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl ${
+                    isScrolled
+                      ? 'bg-gradient-to-r from-deep-blue to-ocean-teal text-white hover:from-ocean-teal hover:to-deep-blue'
+                      : 'bg-white text-ocean-teal hover:bg-white/90'
+                  }`}
+                  aria-label="Open Akvi AI Recruiting Agent (opens in a new tab)"
+                >
+                  <Orbit className="w-4 h-4" aria-hidden="true" />
+                  AI Recruiting Agent
+                </a>
+                <Link
+                  href="/contact"
+                  className="px-6 py-2 bg-[rgb(255,92,57)] text-white rounded-lg font-bold hover:bg-[rgb(255,92,57)]/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  Talk to an Expert
+                </Link>
+              </div>
             </div>
 
             {/* Mobile Menu Button */}
@@ -252,10 +269,21 @@ export default function NavBar() {
                     </Link>
                   )
                 })}
+                <a
+                  href={ATS_AGENT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="mt-4 inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-deep-blue to-ocean-teal text-white rounded-lg font-bold text-center hover:from-ocean-teal hover:to-deep-blue transition-colors shadow-lg"
+                  aria-label="Open Akvi AI Recruiting Agent (opens in a new tab)"
+                >
+                  <Orbit className="w-4 h-4" aria-hidden="true" />
+                  AI Recruiting Agent
+                </a>
                 <Link
                   href="/contact"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="mt-4 px-6 py-3 bg-[rgb(255,92,57)] text-white rounded-lg font-bold text-center hover:bg-[rgb(255,92,57)]/90 transition-colors shadow-lg"
+                  className="px-6 py-3 bg-[rgb(255,92,57)] text-white rounded-lg font-bold text-center hover:bg-[rgb(255,92,57)]/90 transition-colors shadow-lg"
                 >
                   Talk to an Expert
                 </Link>

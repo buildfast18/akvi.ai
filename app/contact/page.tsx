@@ -295,8 +295,21 @@ export default function ContactPage() {
                     <MapPin className="w-6 h-6 text-ocean-teal" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-neutral-dark mb-1">Location</h3>
-                    <p className="text-neutral-dark/70">8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039</p>
+                    <h3 className="font-semibold text-neutral-dark mb-2">Offices</h3>
+                    <div className="space-y-3">
+                      <div>
+                        <p className="text-sm font-medium text-neutral-dark">Hyderabad</p>
+                        <p className="text-neutral-dark/70">
+                          8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-neutral-dark">San Francisco</p>
+                        <p className="text-neutral-dark/70">
+                          1540 Vista Club Cir, Santa Clara, CA 95054
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
