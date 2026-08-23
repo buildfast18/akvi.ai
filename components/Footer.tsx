@@ -15,6 +15,7 @@ const footerLinks = {
     // { href: '/pricing', label: 'Pricing' },
     { href: '/services#development', label: 'Software Development' },
     { href: '/services#staffing', label: 'Talent & Staffing' },
+    { href: 'https://agent-ats.akvi.ai/', label: 'AI Recruiting Agent', external: true },
   ],
   resources: [
     // { href: '/blog', label: 'Blog' },
@@ -65,7 +66,16 @@ export default function Footer() {
               </a>
               <div className="flex items-start space-x-2 text-white/70">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden="true" />
-                <span>8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039</span>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-sm font-medium text-white">Hyderabad</p>
+                    <p>8-41/22/2/1, West Balaji Hills, Hyderabad, Telangana, India 500039</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-white">San Francisco</p>
+                    <p>1540 Vista Club Cir, Santa Clara, CA 95054</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -93,12 +103,23 @@ export default function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-white/70 hover:text-light-aqua transition-colors"
-                  >
-                    {link.label}
-                  </Link>
+                  {'external' in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/70 hover:text-light-aqua transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      className="text-white/70 hover:text-light-aqua transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
